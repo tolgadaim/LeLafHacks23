@@ -6,6 +6,16 @@ public class TimeManager : MonoBehaviour
 {
     public static bool GamePaused = false;
 
+    public float TimeSpentFlying = 0f;
+
+    private void Update()
+    {
+        if (GamePaused == false)
+        {
+            TimeSpentFlying += Time.deltaTime;
+        }
+    }
+
     public void PauseTime()
     {
         GamePaused = true;

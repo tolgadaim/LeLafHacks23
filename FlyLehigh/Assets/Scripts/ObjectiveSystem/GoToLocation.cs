@@ -92,6 +92,7 @@ public class GoToLocation : Objective
         {
             if (_flightPath != null)
             {
+                FindObjectOfType<QuestionManager>().EnableQuestionFor(_navPoint.name);
                 _navPoint = _flightPath.GetNextPoint(_navPoint);
             }
             else
