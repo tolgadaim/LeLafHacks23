@@ -6,6 +6,11 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
+    private GameObject endScreen;
+    [SerializeField]
+    private TMP_Text score;
+
+    [SerializeField]
     private TMP_Text rightAnswers;
     [SerializeField]
     private TMP_Text time;
@@ -39,5 +44,13 @@ public class UIManager : MonoBehaviour
         float seconds = timeManager.TimeSpentFlying;
         time.text = string.Format("Time: {0:D2}:{1:D2}:{2:00.00}", (int)seconds / 3600, (int)((seconds % 3600) / 60), seconds);
         rightAnswers.text = string.Format("Correct Answers: {0:D2}", questionManager.Score);
+    }
+
+    public void ShowEndScreen()
+    {
+        endScreen.SetActive(true);
+        int scoreValue = (questionManager.Score * 1_000_000) / (int)timeManager.TimeSpentFlying;
+        score.text = string.Format("Your Score:\n{scoreValue:N0}");
+        FindObjectOfType<TimeManager>().PauseTime();
     }
 }
