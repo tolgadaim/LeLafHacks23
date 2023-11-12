@@ -1481,41 +1481,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingSpeed: 80
-  _thrustFactor: 6
+  _thrustFactor: 4
   _currentEngineSpeed: 100
   _engineIncreaseSpeed: 0.5
   _dragFactor: 1
-  _maxFacingArea: 200
+  _maxFacingArea: 100
   _fowardAreaFactor: 0.01
-  _backwardAreaFactor: 1
-  _upAreaFactor: 1
-  _rightAreaFactor: 0.94
-  _stallSpeed: 15
+  _backwardAreaFactor: 0.5
+  _upAreaFactor: 0.5
+  _rightAreaFactor: 0.47
+  _stallSpeed: 24
   _stallFactor: 2
   _afterburnerIncreaseFactor: 0.2
   EnginePercentage: 0
   _controlSurfaces:
   - transform: {fileID: 8518933403395117718}
     surfaceType: 2
-    Factor: 0.8
+    Factor: 2
   - transform: {fileID: 353282724768207678}
     surfaceType: 2
-    Factor: 0.8
+    Factor: 2
   - transform: {fileID: 8698259617191487083}
     surfaceType: 0
-    Factor: 2
+    Factor: 4
   - transform: {fileID: 3783208314958313736}
     surfaceType: 1
-    Factor: 2
+    Factor: 4
   - transform: {fileID: 1601679097423954660}
     surfaceType: 3
-    Factor: 2
+    Factor: 4
   - transform: {fileID: 4454475562449776904}
     surfaceType: 4
-    Factor: 2
+    Factor: 3
   - transform: {fileID: 6868708122962779603}
     surfaceType: 4
-    Factor: 2
+    Factor: 3
 --- !u!114 &4497665345549743060
 MonoBehaviour:
   m_ObjectHideFlags: 0
