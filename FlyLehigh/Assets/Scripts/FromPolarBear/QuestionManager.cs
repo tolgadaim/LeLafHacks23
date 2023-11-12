@@ -29,17 +29,20 @@ public class QuestionManager : MonoBehaviour
             case "Lehigh University":
                 QuestionSets[2].questions[randomIndex].gameObject.SetActive(true);
                 break;
-            case "Steel Stacks":
+            case "North Bethlehem":
                 QuestionSets[3].questions[randomIndex].gameObject.SetActive(true);
                 break;
-            case "Lehigh River":
+            case "Steel Stacks":
                 QuestionSets[4].questions[randomIndex].gameObject.SetActive(true);
                 break;
-            case "Easton":
+            case "Lehigh River":
                 QuestionSets[5].questions[randomIndex].gameObject.SetActive(true);
                 break;
-            case "Lafayette College":
+            case "Easton":
                 QuestionSets[6].questions[randomIndex].gameObject.SetActive(true);
+                break;
+            case "Lafayette College":
+                QuestionSets[7].questions[randomIndex].gameObject.SetActive(true);
                 break;
             default:
                 GameObject.FindObjectOfType<TimeManager>().ResumeTime();

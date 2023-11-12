@@ -17,7 +17,7 @@ public class QuestionScript : MonoBehaviour
         {
             qManager.GiveScore();
         }
-        Invoke("ResetQuestion", 1f);
+        StartCoroutine(InvokeCoroutine(ResetQuestion, 1f));
         return correct;
     }
 
@@ -30,5 +30,12 @@ public class QuestionScript : MonoBehaviour
         }
         GameObject.FindObjectOfType<TimeManager>().ResumeTime();
         transform.gameObject.SetActive(false);
+    }
+
+    private IEnumerator InvokeCoroutine(System.Action action, float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        if (action != null)
+            action();
     }
 }

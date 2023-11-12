@@ -14,6 +14,10 @@ public class GoToLocation : Objective
 
     [SerializeField]
     private GameObject _waypointRing;
+    [SerializeField]
+    private GameObject _arrowPointer;
+    [SerializeField]
+    private Vector3 _arrowPointerOffset = new Vector3(0f, 4f, 0f);
 
     private int _currentPoints = 0;
     private int _totalPointsNeeded = 0;
@@ -35,6 +39,8 @@ public class GoToLocation : Objective
     protected override void Start()
     {
         base.Start();
+
+        _player = FindObjectOfType<AerodynamicController>().transform;
         
         if (_flightPath != null)
         {
@@ -64,7 +70,14 @@ public class GoToLocation : Objective
             FinishObjective();
         }
 
-        if (_waypointRing != null) UpdateWaypointRing();
+        if (_waypointRing != null)
+        {
+            UpdateWaypointRing();
+            if (_arrowPointer != null)
+            {
+                UpdatePointerArrow();
+            }
+        }
     }
 
     void UpdateWaypointRing()
@@ -79,6 +92,13 @@ public class GoToLocation : Objective
         Vector3 relativePos = _player.position - _waypointRing.transform.position;
         _waypointRing.transform.rotation = Quaternion.LookRotation(relativePos, Vector3.up);
         _waypointRing.GetComponentInChildren<TMP_Text>().text = _navPoint.name;
+    }
+
+    void UpdatePointerArrow()
+    {
+        Vector3 offsetVector = _player.transform.right * _arrowPointerOffset.x + _player.transform.up * _arrowPointerOffset.y + _player.transform.forward * _arrowPointerOffset.z;
+        _arrowPointer.transform.position = _player.transform.position + offsetVector;
+        _arrowPointer.transform.LookAt(_waypointRing.transform, Vector3.forward);
     }
 
     public override void FinishObjective()

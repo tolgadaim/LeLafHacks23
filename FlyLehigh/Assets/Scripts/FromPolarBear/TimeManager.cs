@@ -12,7 +12,13 @@ public class TimeManager : MonoBehaviour
     {
         if (GamePaused == false)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1f;
             TimeSpentFlying += Time.deltaTime;
+        }
+        else {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
         }
     }
 
