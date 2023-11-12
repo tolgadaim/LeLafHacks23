@@ -2059,7 +2059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c1c9a278b037c4698fb11050703173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingSpeed: 0
+  _startingSpeed: 150
   _thrustFactor: 75
   _currentEngineSpeed: 0
   _engineIncreaseSpeed: 0.5
@@ -2072,7 +2072,7 @@ MonoBehaviour:
   _stallSpeed: 65
   _stallFactor: 2
   _afterburnerIncreaseFactor: 0.2
-  EnginePercentage: 0
+  EnginePercentage: 80
   _controlSurfaces:
   - transform: {fileID: 6519070414714706787}
     surfaceType: 2
@@ -2115,13 +2115,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sounds:
   - name: Jet Engine
-    clip: {fileID: 8300000, guid: 5be2854e7b53b7d4cb0e1b51a9b753be, type: 3}
+    clip: {fileID: 8300000, guid: d9d3e5590927df04e888bf6d545ebc68, type: 3}
     volume: 0.01
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Afterburner
-    clip: {fileID: 8300000, guid: f52fc64be8e870e43bc142c6b1b0d975, type: 3}
+    clip: {fileID: 8300000, guid: 851b7ac18ea1a9045a12950483672fc9, type: 3}
     volume: 0.01
     pitch: 1
     loop: 1

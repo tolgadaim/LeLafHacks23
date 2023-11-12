@@ -22,16 +22,19 @@ public class UIManager : MonoBehaviour
     private QuestionManager questionManager;
     [SerializeField]
     private TimeManager timeManager;
+    
+    private MoveToOrigin MTO;
 
     private void Start()
     {
         ac = FindObjectOfType<AerodynamicController>();
+        MTO = FindObjectOfType<MoveToOrigin>();
     }
 
     private void Update()
     {
         speed.text = string.Format("SPD\n{0:N0}", ac.GetComponent<Rigidbody>().velocity.magnitude * 1.944f); // knots
-        altitude.text = string.Format("ALT\n{0:N0}", ac.transform.position.y * 3.281f); // feet
+        altitude.text = string.Format("ALT\n{0:N0}", (MTO.HeightDisplacement + ac.transform.position.y) * 3.281f); // feet
 
         float seconds = timeManager.TimeSpentFlying;
         time.text = string.Format("Time: {0:D2}:{1:D2}:{2:00.00}", (int)seconds / 3600, (int)((seconds % 3600) / 60), seconds);
