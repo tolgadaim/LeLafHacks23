@@ -12,6 +12,7 @@ Lehigh Valley
 ### Instructions
 To play Fly Lehigh, go to the repo's release section, download the game, and run it on your Windows computer.
 Use the WASD keys to fly the plane, SHIFT to increase the engine power, and CTRL to decrease the engine power.
+
 Test out the mechanics here: https://flylehigh.s3.amazonaws.com/index.html
 
 ### Citations
