@@ -17,6 +17,7 @@ public class ObjectiveManager : MonoBehaviour
         {
             _currentObjective = GetComponentInChildren<Objective>();
         }
+        
     }
 
     [ContextMenu("FinishCurrentObjective")]

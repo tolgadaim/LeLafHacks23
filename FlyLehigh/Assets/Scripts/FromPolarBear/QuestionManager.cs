@@ -16,6 +16,9 @@ public class QuestionManager : MonoBehaviour
 
     public void EnableQuestionFor(string placeTitle)
     {
+        if (String.IsNullOrEmpty(placeTitle))
+            return;
+        
         int randomIndex = UnityEngine.Random.Range(0, 3);
         GameObject.FindObjectOfType<TimeManager>().PauseTime();
         switch (placeTitle)
@@ -43,6 +46,9 @@ public class QuestionManager : MonoBehaviour
                 break;
             case "Lafayette College":
                 QuestionSets[7].questions[randomIndex].gameObject.SetActive(true);
+                break;
+            case "End of Journey":
+                // Nothing
                 break;
             default:
                 GameObject.FindObjectOfType<TimeManager>().ResumeTime();

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -42,15 +41,21 @@ public class UIManager : MonoBehaviour
         altitude.text = string.Format("ALT\n{0:N0}", (MTO.HeightDisplacement + ac.transform.position.y) * 3.281f); // feet
 
         float seconds = timeManager.TimeSpentFlying;
-        time.text = string.Format("Time: {0:D2}:{1:D2}:{2:00.00}", (int)seconds / 3600, (int)((seconds % 3600) / 60), seconds);
+        time.text = string.Format("Time: {0:D2}:{1:D2}:{2:00.00}", (int)seconds / 3600, (int)((seconds % 3600) / 60), seconds%60);
         rightAnswers.text = string.Format("Correct Answers: {0:D2}", questionManager.Score);
     }
 
     public void ShowEndScreen()
     {
         endScreen.SetActive(true);
-        int scoreValue = (questionManager.Score * 1_000_000) / (int)timeManager.TimeSpentFlying;
-        score.text = string.Format("Your Score:\n{scoreValue:N0}");
+        int scoreValue = (int)((questionManager.Score * 1_000_000) / timeManager.TimeSpentFlying);
+        score.text = string.Format("Your Score:\n{0:N0}", scoreValue);
         FindObjectOfType<TimeManager>().PauseTime();
+    }
+
+    public void RestartGame()
+    {
+        GameObject.FindObjectOfType<TimeManager>().ResumeTime();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
