@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
     private int _elevatorCondition;
     private int _throttleCondition;
 
+    void OnCollisionEnter(Collision collision)
+    {
+        FindObjectOfType<DeathMenu>(true).gameObject.SetActive(true);
+        FindObjectOfType<TimeManager>().PauseTime();
+    }
+
     void Update()
     {
         // Get input values
