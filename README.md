@@ -16,4 +16,5 @@ Use the WASD keys to fly the plane, SHIFT to increase the engine power, and CTRL
 ### Citations
 3D Model for the Cessna 172 plane: https://animium.com/2012/02/cessna-172-skyhawk-3d-model  
 3D Map used to display the Lehigh Valley (Github): https://github.com/microsoft/MapsSDK-Unity  
-Cessna engine sound: https://www.youtube.com/watch?v=OfqzK_2-NEc
+Cessna engine sound: https://www.youtube.com/watch?v=OfqzK_2-NEc  
+Landscape: https://polyhaven.com/a/kloppenheim_06_puresky
